@@ -1,0 +1,18 @@
+### https://taskfile.dev
+###---------------------
+
+version: '2'
+
+tasks:
+  lint:
+    cmds:
+      - golangci-lint run
+
+  test:
+    cmds:
+      - go test -cover -v ./...
+
+  default:
+    cmds:
+      - task: lint
+      - task: test
